@@ -21,6 +21,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'ervandew/supertab'
+" General
+Plugin 'tpope/vim-vinegar'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
