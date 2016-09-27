@@ -23,6 +23,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'ervandew/supertab'
 " General
 Plugin 'tpope/vim-vinegar'
+" For C++
+Plugin 'rhysd/vim-clang-format'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -186,3 +188,7 @@ set path+=$PWD/**
 match ErrorMsg '\%>83v.\+' "Highlight characters after 80 columns
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " spell check in commit messages
 set wildignore+=*.o,*.swp,*.swo
+autocmd QuickFixCmdPost *grep* cwindow
+nnoremap <buffer><Leader>k :<C-u>ClangFormat<CR>
+vnoremap <buffer><Leader>k :ClangFormat<CR>
+autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable

@@ -27,3 +27,4 @@ CoreLoop
 Repl
 zeropage
 Eor
+libclang
