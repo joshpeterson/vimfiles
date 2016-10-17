@@ -186,6 +186,7 @@ au BufRead *.md setlocal spell
 au BufRead *.md setlocal wrap
 set path+=$PWD/**
 match ErrorMsg '\%>83v.\+' "Highlight characters after 80 columns
+autocmd BufNew,BufRead *.html.*.yml match none
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " spell check in commit messages
 set wildignore+=*.o,*.swp,*.swo
 autocmd QuickFixCmdPost *grep* cwindow
