@@ -29,3 +29,6 @@ zeropage
 Eor
 libclang
 GCC
+offsetof
+AST
+libclang's

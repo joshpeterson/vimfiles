@@ -1,5 +1,8 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,7 +18,10 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
+Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'jwhitley/vim-matchit'
 " For C#
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'OmniSharp/omnisharp-vim'
@@ -188,11 +194,16 @@ set path+=$PWD/**
 match ErrorMsg '\%>83v.\+' "Highlight characters after 80 columns
 autocmd BufNew,BufRead *.html.*.yml match none
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " spell check in commit messages
-set wildignore+=*.o,*.swp,*.swo
+set wildignore+=*.o,*.swp,*.swo,*/vendor/*,*/tmp/*,*/cde-package/*
 autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <buffer><Leader>k :<C-u>ClangFormat<CR>
 vnoremap <buffer><Leader>k :ClangFormat<CR>
 autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+
+" Custom astyle setup
+au BufWrite *.cs :Autoformat
+let g:formatdef_my_custom_cs = '"astyle --options=.astylerc"'
+let g:formatters_cs = ['my_custom_cs']
 
 " From http://scottsievert.com/blog/2016/01/06/vim-jekyll-mathjax/
 function! MathAndLiquid()
@@ -218,3 +229,17 @@ endfunction
 " Call everytime we open a Markdown file
 autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathAndLiquid()
 autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set textwidth=83
+
+" Shortcut to search tags with ctrlp
+nnoremap <leader>. :CtrlPTag<cr>
+
+" vim-ruby-refactoring
+:nnoremap <leader>rap  :RAddParameter<cr>
+:nnoremap <leader>rcpc :RConvertPostConditional<cr>
+:nnoremap <leader>rel  :RExtractLet<cr>
+:vnoremap <leader>rec  :RExtractConstant<cr>
+:vnoremap <leader>relv :RExtractLocalVariable<cr>
+:nnoremap <leader>rit  :RInlineTemp<cr>
+:vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+:vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+:vnoremap <leader>rem  :RExtractMethod<cr>
