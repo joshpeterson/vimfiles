@@ -74,7 +74,7 @@ au BufRead *.md setlocal wrap
 set path+=$PWD/**
 autocmd BufNew,BufRead *.html.*.yml match none
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " spell check in commit messages
-set wildignore+=*.o,*.swp,*.swo
+set wildignore+=*.o,*.swp,*.swo,*/build/*,*/artifacts/*
 autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <buffer><Leader>k :<C-u>ClangFormat<CR>
 vnoremap <buffer><Leader>k :ClangFormat<CR>
