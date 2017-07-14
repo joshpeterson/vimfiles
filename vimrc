@@ -82,7 +82,6 @@ set wildignore+=*.o,*.swp,*.swo,*/build/*,*/artifacts/*
 autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <buffer><Leader>k :<C-u>ClangFormat<CR>
 vnoremap <buffer><Leader>k :ClangFormat<CR>
-autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
 
 " From http://scottsievert.com/blog/2016/01/06/vim-jekyll-mathjax/
 function! MathAndLiquid()
