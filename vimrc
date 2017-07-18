@@ -35,6 +35,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'szw/vim-tags'
+Plugin 'yssl/QFEnter'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
