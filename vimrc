@@ -28,6 +28,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'szw/vim-tags'
+Plugin 'yssl/QFEnter'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -114,7 +115,8 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ artifacts\ --ignore\ build\ --ignore\ External
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore artifacts --ignore build --ignore External -g ""'
+  " The .agignore was generated like this: `ls External | grep -v il2cpp > .agignore`
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore artifacts --ignore build -p ~/.agignore -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   "let g:ctrlp_use_caching = 0
@@ -128,5 +130,5 @@ set hidden
 nnoremap <C-M> :bnext<CR>
 nnoremap <C-N> :bprev<CR>
 
-let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build --exclude=External 2>/dev/null"
+let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 1
