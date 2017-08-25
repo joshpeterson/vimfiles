@@ -1,8 +1,5 @@
 set nocompatible              " be iMproved, required
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -30,6 +27,8 @@ Plugin 'ervandew/supertab'
 " For C++
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/a.vim'
+" For Rust
+Plugin 'rust-lang/rust.vim'
 " General
 Plugin 'tpope/vim-vinegar'
 Plugin 'editorconfig/editorconfig-vim'
@@ -55,7 +54,11 @@ Plugin 'yssl/QFEnter'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
 filetype plugin indent on    " required
+filetype plugin on    " Enable filetype-specific plugins
+syntax on             " Enable syntax highlighting
 " " To ignore plugin indent changes, instead use:
 " "filetype plugin on
 " "
@@ -264,10 +267,7 @@ endif
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" Remap buffer change commands
-set hidden
-nnoremap <C-M> :bnext<CR>
-nnoremap <C-N> :bprev<CR>
-
 let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build --exclude=External 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 1
+
+let g:rustfmt_autosave = 1
