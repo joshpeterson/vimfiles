@@ -125,10 +125,5 @@ endif
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" Remap buffer change commands
-set hidden
-nnoremap <C-M> :bnext<CR>
-nnoremap <C-N> :bprev<CR>
-
 let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 1
