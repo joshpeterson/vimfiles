@@ -200,7 +200,9 @@ au BufRead *.md setlocal spell
 au BufRead *.md setlocal wrap
 set path+=$PWD/**
 match ErrorMsg '\%>83v.\+' "Highlight characters after 80 columns
-autocmd BufNew,BufRead *.html.*.yml match none
+au BufNew,BufRead *.html match none
+au BufNew,BufRead *.yml match none
+au BufNew,BufRead *.md match none
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell " spell check in commit messages
 set wildignore+=*.o,*.swp,*.swo,*/vendor/*,*/tmp/*,*/cde-package/*
 autocmd QuickFixCmdPost *grep* cwindow
@@ -255,10 +257,10 @@ nnoremap <leader>. :CtrlPTag<cr>
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ artifacts\ --ignore\ build\ --ignore\ External
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ artifacts\ --ignore\ build\ --ignore\ External\ --ignore\ vendor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore artifacts --ignore build --ignore External -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore artifacts --ignore build --ignore vendor --ignore External -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   "let g:ctrlp_use_caching = 0
