@@ -21,12 +21,18 @@ Plugin 'jwhitley/vim-matchit'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
-Plugin 'OmniSharp/omnisharp-vim'
+"
+" vim-nox in Unbuntu 17.04 does not support python, just python3
+" I'm waiting for omnisharp-vim to work with python3
+" https://github.com/OmniSharp/omnisharp-vim/pull/316
+"
+"Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'ervandew/supertab'
 " For C++
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/a.vim'
+Plugin 'Valloric/YouCompleteMe'
 " For Rust
 Plugin 'rust-lang/rust.vim'
 " General
@@ -273,3 +279,7 @@ let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclud
 let g:vim_tags_use_vim_dispatch = 1
 
 let g:rustfmt_autosave = 1
+
+"YCM Keymappings
+map <F9> :YcmCompleter FixIt<CR>
+map <F12> :YcmCompleter GoTo<CR>
