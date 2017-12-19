@@ -19,7 +19,6 @@ Plugin 'tpope/vim-markdown'
 Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-dispatch'
-Plugin 'ervandew/supertab'
 " For C++
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/a.vim'
@@ -67,9 +66,9 @@ filetype plugin indent on    " required
 syn on
 set number
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set smarttab
 set expandtab
 set list
@@ -125,5 +124,5 @@ endif
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build 2>/dev/null"
-let g:vim_tags_use_vim_dispatch = 1
+let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build --exclude=buildszip_stagingarea 2>/dev/null"
+let g:vim_tags_use_vim_dispatch = 0
