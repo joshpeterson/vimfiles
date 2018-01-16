@@ -28,6 +28,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'szw/vim-tags'
 Plugin 'yssl/QFEnter'
+Plugin 'junegunn/fzf.vim'
+Plugin 'jremmen/vim-ripgrep'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -126,3 +128,4 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build --exclude=buildszip_stagingarea 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 0
+set rtp+=/usr/local/opt/fzf
