@@ -41,6 +41,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
 Plugin 'szw/vim-tags'
 Plugin 'yssl/QFEnter'
+Plugin 'junegunn/fzf.vim'
+Plugin 'jremmen/vim-ripgrep'
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -283,3 +285,4 @@ let g:rustfmt_autosave = 1
 "YCM Keymappings
 map <F9> :YcmCompleter FixIt<CR>
 map <F12> :YcmCompleter GoTo<CR>
+set rtp+=/usr/local/opt/fzf
