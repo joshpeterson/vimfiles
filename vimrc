@@ -12,14 +12,10 @@ Plugin 'gmarik/Vundle.vim'
 " For Ruby
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'jwhitley/vim-matchit'
 " For C#
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/syntastic'
 "
 " vim-nox in Unbuntu 17.04 does not support python, just python3
@@ -28,7 +24,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 "
 "Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
-Plugin 'ervandew/supertab'
 " For C++
 Plugin 'rhysd/vim-clang-format'
 Plugin 'vim-scripts/a.vim'
@@ -36,6 +31,9 @@ Plugin 'Valloric/YouCompleteMe'
 " For Rust
 Plugin 'rust-lang/rust.vim'
 " General
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-vinegar'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ap/vim-buftabline'
@@ -286,3 +284,4 @@ let g:rustfmt_autosave = 1
 map <F9> :YcmCompleter FixIt<CR>
 map <F12> :YcmCompleter GoTo<CR>
 set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
