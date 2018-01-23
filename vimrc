@@ -128,4 +128,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build --exclude=buildszip_stagingarea 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 0
+
+"FZF Stuff
 set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+nnoremap <c-p> :FZF<cr>
