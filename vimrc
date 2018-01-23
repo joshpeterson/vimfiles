@@ -283,5 +283,8 @@ let g:rustfmt_autosave = 1
 "YCM Keymappings
 map <F9> :YcmCompleter FixIt<CR>
 map <F12> :YcmCompleter GoTo<CR>
+
+"FZF Stuff
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
+nnoremap <c-p> :FZF<cr>
