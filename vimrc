@@ -119,3 +119,6 @@ let g:vim_tags_use_vim_dispatch = 0
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 nnoremap <c-p> :FZF<cr>
+
+" macOS clipboard integration
+set clipboard=unnamed
