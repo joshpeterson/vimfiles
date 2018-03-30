@@ -288,3 +288,6 @@ map <F12> :YcmCompleter GoTo<CR>
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 nnoremap <c-p> :FZF<cr>
+
+" macOS clipboard integration
+set clipboard=unnamed
