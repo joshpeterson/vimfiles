@@ -287,7 +287,11 @@ map <F12> :YcmCompleter GoTo<CR>
 "FZF Stuff
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-t> :FZF<cr>
 
 " macOS clipboard integration
 set clipboard=unnamed
+
+"Buffer switching
+nnoremap <c-p> :bp<cr>
+nnoremap <c-n> :bn<cr>
