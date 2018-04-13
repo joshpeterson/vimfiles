@@ -260,20 +260,8 @@ nnoremap <leader>. :CtrlPTag<cr>
 :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
 :vnoremap <leader>rem  :RExtractMethod<cr>
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor\ --ignore\ artifacts\ --ignore\ build\ --ignore\ External\ --ignore\ vendor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore artifacts --ignore build --ignore vendor --ignore External -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  "let g:ctrlp_use_caching = 0
-endif
-
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Rg "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclude=artifacts --exclude=build 2>/dev/null"
 let g:vim_tags_use_vim_dispatch = 1
