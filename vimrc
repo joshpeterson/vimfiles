@@ -214,7 +214,9 @@ set wildignore+=*.o,*.swp,*.swo,*/vendor/*,*/tmp/*,*/cde-package/*
 autocmd QuickFixCmdPost *grep* cwindow
 nnoremap <buffer><Leader>k :<C-u>ClangFormat<CR>
 vnoremap <buffer><Leader>k :ClangFormat<CR>
-autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+if getcwd() !~ "llvm-project"
+  autocmd FileType c,cpp,h,hpp ClangFormatAutoEnable
+endif
 
 " Custom astyle setup
 au BufWrite *.cs :Autoformat
