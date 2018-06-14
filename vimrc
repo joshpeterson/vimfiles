@@ -130,6 +130,7 @@ let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} --exclud
 let g:vim_tags_use_vim_dispatch = 0
 
 "FZF Stuff
+let $FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.hg,build,artifacts}/*" 2> /dev/null'
 set rtp+=/usr/local/opt/fzf
 set rtp+=~/.fzf
 nnoremap <c-t> :FZF<cr>
